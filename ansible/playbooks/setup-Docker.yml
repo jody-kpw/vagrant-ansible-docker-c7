@@ -1,0 +1,23 @@
+---
+# K8S Server Playbook
+- hosts: docker
+  become: true
+  roles:
+    - ../../roles/ansible-hosts
+  vars:
+    hosts:
+      - { ip: '192.168.50.20', domain: 'docker-master' }
+    hosts_reset: yes
+
+
+- hosts: docker
+  become: true
+  roles:
+    - ../roles/setlocale
+    - ../roles/ntp
+    - ../roles/firewalld
+    - ../roles/selinux
+    - ../roles/repositories
+    - ../roles/development-tools
+    - ../roles/cli-text-editors
+    - ../roles/utilities

@@ -1,0 +1,3 @@
+---
+- import_playbook: playbooks/setup-Control.yml
+- import_playbook: playbooks/setup-Docker.yml

@@ -1,0 +1,6 @@
+---
+# Control Server Playbook
+- hosts: control
+  become: true
+  roles:
+    - ../roles/ntp
